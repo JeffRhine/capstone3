@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+
+
 @Component
 public class JDBCSurveyDAO implements SurveyDAO{
 
@@ -39,10 +41,18 @@ public class JDBCSurveyDAO implements SurveyDAO{
 	}
 
 	@Override
-	public void createSurvey(String parkCode, String emailAddress, String state, String activityLevel) {
-		String sqlCreateSurvey = "INSERT INTO survey_result(parkcode, emailaddress, state, activitylevel) "
-									+ "VALUES(?, ?, ?, ?) RETURNING id";
-		jdbcTemplate.queryForObject(sqlCreateSurvey, Integer.class, parkCode, emailAddress, state, activityLevel);
+	public void createSurvey(Survey survey) {
+		
+		String sqlCreateSurvey = "INSERT INTO survey_result( parkcode, emailaddress, state, activitylevel) "
+									+ "VALUES( ?, ?, ?,?) ";
+		jdbcTemplate.update(sqlCreateSurvey, survey.getParkCode(), survey.getEmailAddress(),survey.getState(),survey.getActivityLevel());
 	}
 	
 }
+
+//public void save(ForumPost post) {
+//	Long id = getNextId();
+//	String sqlInsertPost = "INSERT INTO forum_post(id, username, subject, message, post_date) VALUES (?,?,?,?,?)";
+//	jdbcTemplate.update(sqlInsertPost, id, post.getUsername(), post.getSubject(), post.getMessage(), post.getDatePosted());
+//	post.setId(id);
+////}

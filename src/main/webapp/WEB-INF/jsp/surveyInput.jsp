@@ -11,24 +11,24 @@
 		<label for="favorite park">Your favorite park</label>
 		 <select
 			name="park" id="park">
-			<option value="Cuyahoga Valley National Park">Cuyahoga
+			<option value="CVNP">Cuyahoga
 				Valley National Park</option>
-			<option value="Everglades National Park">Everglades National
+			<option value="ENP">Everglades National
 				Park</option>
-			<option value="Grand Canyon National Park">Grand Canyon
+			<option value="GCNP">Grand Canyon
 				National Park</option>
-			<option value="Glacier National Park">Glacier National Park</option>
-			<option value="Great Smokey Mountains National Park">Great
+			<option value="GNP">Glacier National Park</option>
+			<option value="GSMNP">Great
 				Smokey Mountains National Park</option>
-			<option value="Grand Teton National Park">Grand Teton
+			<option value="GTNP">Grand Teton
 				National Park</option>
-			<option value="Mount Raineir National Park">Mount Raineir
+			<option value="MRNP">Mount Raineir
 				National Park</option>
-			<option value="Rocky Mountain National Park">Rocky Mountain
+			<option value="RMNP">Rocky Mountain
 				National Park</option>
-			<option value="Yellowstone National Park">Yellowstone
+			<option value="YNP">Yellowstone
 				National Park</option>
-			<option value="Yosemite National Park">Yosemite National
+			<option value="YNP2">Yosemite National
 				Park</option>
 		</select>
 

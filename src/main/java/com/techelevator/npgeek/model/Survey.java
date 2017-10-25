@@ -1,12 +1,17 @@
 package com.techelevator.npgeek.model;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Survey {
 
 	private int surveyId;
 	private String parkCode;
+	@NotBlank(message="Email is required") @Email(message="Must be valid Email Address")
 	private String emailAddress;
 	private String state;
 	private String activityLevel;
+	
 	public int getSurveyId() {
 		return surveyId;
 	}
