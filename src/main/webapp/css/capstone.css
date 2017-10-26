@@ -29,3 +29,10 @@ img {
 	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
 	padding-right: 25px;
 }
+
+.navigation {
+	display: inline-grid;
+	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+	padding-right: 25px;
+	
+}
