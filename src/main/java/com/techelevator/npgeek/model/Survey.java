@@ -11,6 +11,7 @@ public class Survey {
 	private String emailAddress;
 	private String state;
 	private String activityLevel;
+	private int count;
 	
 	public int getSurveyId() {
 		return surveyId;
@@ -41,6 +42,12 @@ public class Survey {
 	}
 	public void setActivityLevel(String activityLevel) {
 		this.activityLevel = activityLevel;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	

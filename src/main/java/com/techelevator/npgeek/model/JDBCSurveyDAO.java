@@ -23,16 +23,14 @@ public class JDBCSurveyDAO implements SurveyDAO{
 	}
 	
 	@Override
-	public List<Survey> getAllSurveys() {
+	public List<Survey> getSurveyCount() {
 			List<Survey> allSurvey = new ArrayList<>();
-			String sqlSelect = "SELECT * FROM survey_result";
+			String sqlSelect = "SELECT COUNT(parkcode),parkcode FROM survey_result GROUP BY parkcode ORDER BY COUNT DESC,parkcode LIMIT 5";
 			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelect);
 			while(results.next()) {
 				Survey s = new Survey();
 				s.setParkCode(results.getString("parkcode"));
-				s.setEmailAddress(results.getString("emailaddress"));
-				s.setState(results.getString("state"));
-				s.setActivityLevel(results.getString("activitylevel"));
+				s.setCount(results.getInt("count"));
 				allSurvey.add(s);
 		}
 			return allSurvey;

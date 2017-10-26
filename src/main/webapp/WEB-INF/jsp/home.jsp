@@ -18,7 +18,9 @@
 						<c:url value="/img/parks/${park.parkCode}.jpg" var="imgUrl"/>
 						 <a href="parkDetail?parkCode=${park.parkCode}"><img src="${imgUrl}" /></a> 
 						 </div> <br><br>
+						 <div>
 						 <p><c:out value="${park.parkDescription}"/></p>
+						 </div>
 					</li>
 					
 				</ul>

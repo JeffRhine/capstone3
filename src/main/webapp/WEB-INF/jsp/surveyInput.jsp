@@ -8,9 +8,8 @@
 
 
 	<div>
-		<label for="favorite park">Your favorite park</label>
-		 <select
-			name="park" id="park">
+		<label for="favorite park" >Your favorite park</label>
+		 <select name="parkCode" id="park">
 			<option value="CVNP">Cuyahoga
 				Valley National Park</option>
 			<option value="ENP">Everglades National
@@ -33,8 +32,8 @@
 		</select>
 
 		<div>
-			<label for="Your home state">Your home state</label>
-			<select>
+			<label for="Your home state" >Your home state</label>
+			<select name="state">
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
@@ -89,17 +88,18 @@
 			</select>
 		</div>
 	<div>
-	<label for="activity level">Your activity level</label>
-		<select>
+	<label for="activity level" >Your activity level</label>
+		<select name="activityLevel" >
 			<option value="inactive">inactive</option>
 				<option value="sedentary">sedentary</option>
 				<option value="active">active</option>
-				<option value="extreamly active">extreamly active</option>
+				<option value="extreamly active">extreamly active</option>	
 		</select>
+
 	</div>
 	<div>
 		<label for="email">Your email address</label> <input type="email"
-				id="email" name="email">
+				id="email" name="emailAddress">
 	</div>
 
 	</div>
