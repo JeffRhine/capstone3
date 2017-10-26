@@ -1,6 +1,6 @@
 <%@include file="common/header.jspf"%>
 
-<h1>Survey!!! Which park is your favorite</h1>
+<h1 class="toplevel">Survey!!! Which park is your favorite</h1>
 
 
 <c:url var="survey" value="/surveyInput" />

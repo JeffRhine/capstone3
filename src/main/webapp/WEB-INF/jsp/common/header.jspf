@@ -3,16 +3,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style type="text/css">
-			img {width:400px; 
-				length:400px;}
-		</style>
+	<c:url value="/css/capstone.css" var="cssHref" />
+    <link rel="stylesheet" href="${cssHref}">
+	
 		<c:url value="/img/logo.png" var="logoURL" />
         <a href="${homePageHref}">
-        		<img src="${logoURL}" alt="National Park Geek logo" />
+        		<img src="${logoURL}" class="images" alt="National Park Geek logo" />
         </a>
         
-        <nav>
+        <nav class="navBar">
          <hr> 
        
        	  <c:url var="home" value="/home"></c:url>
