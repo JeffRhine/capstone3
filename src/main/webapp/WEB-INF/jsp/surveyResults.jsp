@@ -14,8 +14,7 @@
 	<body>
 		<c:forEach items= "${surveyCount}" var="count">
 			<div>
-				<ul>
-					<li>
+				
 					
 						 
 						<c:url value="/img/parks/${count.parkCode}.jpg" var="imgUrl"/>
@@ -23,15 +22,12 @@
 						 </div> <br><br>
 						 <div>
 						 
-						  <p><c:out value="${park.parkName}"/></p> 
-						 <p><c:out value="${park.parkDescription}"/></p> 
+						  <p><c:out value="${count.name}"/></p> 
+						 <p><c:out value="${count.description}"/></p> 
 						
 						 	<div> <p><strong>Total survey's: <c:out value="${count.count}"/></strong></p>
 						 </div>
-						
-					</li>
-					
-				</ul>
+				
 			</div>
 		</c:forEach>	
 	</body>

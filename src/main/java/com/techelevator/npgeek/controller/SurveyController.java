@@ -52,10 +52,8 @@ public class SurveyController {
 		return "redirect:/surveyResults";
 	}
 	@RequestMapping(path = "/surveyResults", method = RequestMethod.GET)
-	public String survey(ModelMap modelHolder, @RequestParam String parkCode) {
-		List<Park> park = parkDAO.getParkDetails(parkCode);
+	public String survey(ModelMap modelHolder) {	
 		List<Survey> survey = surveyDAO.getSurveyCount();
-		modelHolder.put("parkDetails", park);
 		modelHolder.put("surveyCount", survey);
 		return "surveyResults";
 	}

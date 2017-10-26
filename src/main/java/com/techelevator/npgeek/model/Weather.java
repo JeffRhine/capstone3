@@ -7,6 +7,9 @@ public class Weather {
 		private int low;
 		private int high;
 		private String forecast;
+		private boolean tempUnit = true;
+		
+		
 		public String getParkCode() {
 			return parkCode;
 		}
@@ -36,6 +39,12 @@ public class Weather {
 		}
 		public void setForecast(String forecast) {
 			this.forecast = forecast;
+		}
+		public boolean isTempUnit() {
+			return tempUnit;
+		}
+		public void setTempUnit(boolean tempUnit) {
+			tempUnit = !tempUnit;
 		}
 		
 }

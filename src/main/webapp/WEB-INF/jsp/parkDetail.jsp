@@ -10,19 +10,24 @@
 <body>
 	<c:forEach items="${parkDetails}" var="park">
 		<div>
-			<ul>
-				<li>
+			
 					<div>
-						<p>
-							<strong><c:out value="${park.parkName}" /></strong>
-						</p>
-
 						<c:url value="/img/parks/${park.parkCode}.jpg" var="imgUrl" />
-						<a href="parkDetail?parkCode=${park.parkCode}"><img
+						<a href="parkDetail?parkCode=${park.parkCode}"><img class ="detailImg"
 							src="${imgUrl}" /></a>
 					</div> <br>
+					
 				<br>
-					<p>
+				<p class="parkName">
+							<strong><c:out value="${park.parkName}" /></strong>
+						</p>
+						<p>
+						
+						<c:out value="&quot;${park.quote}&quot;" />
+					
+						- <c:out value="${park.quoteSource}" />
+					</p><br>
+					<p class="indent">
 						<c:out value="${park.parkDescription}" />
 					</p>
 					<p>
@@ -58,13 +63,7 @@
 						Annual visitor count:
 						<c:out value="${park.annualVisitorCount}" />
 					</p>
-					<p>
-						Park Quote:
-						<c:out value="${park.quote}" />
-					</p>
-					<p>
-						<c:out value="${park.quoteSource}" />
-					</p>
+					
 					<p>
 						Entry Fee:
 						<c:out value="${park.entryFee}" />
@@ -75,28 +74,50 @@
 						different species
 					</p>
 
-				</li>
-
-			</ul>
 		</div>
 	</c:forEach>
 
-
+			<c:url var="changeTemp" value="/parkDetail"></c:url>
+           <button type="radio" name="tempUnit" >Change temperature units </button>
+       <div id="forecast">    
 	<c:forEach items="${parkWeather}" var="weather">
-		<div>
-			<ul>
-				<li>
+		<div >
+			
 					<p>
 						Day:
 						<c:out value="${weather.fiveDayForecast}" />
 					</p>
+					<c:choose>
+						<c:when test="${weather.forecast == 'partly cloudy'}">
+							<c:url value="/img/weather/partlyCloudy.png" var="pc" />
+							<img class="weather" src="${pc}">
+						</c:when>
+						<c:otherwise>
+							<c:url value="/img/weather/${weather.forecast}.png"
+								var="weatherURL" />
+							<img class="weather" src="${weatherURL}" />
+								</c:otherwise>
+					</c:choose>
+					<p>
+						<c:out value="${weather.forecast }" />
+					</p> 
 					<p>
 						Low temp:
-						<c:out value="${weather.low }" />
+						<c:if test="${weather.tempUnit==true}">
+						<c:out value="${weather.low }" /> &deg;F
+						</c:if>
+						<c:if test="${weather.tempUnit==false}">
+						<c:out value="${(weather.low-32)/1.8 }"/> &deg;C
+						</c:if>
 					</p>
 					<p>
 						High temp:
-						<c:out value="${weather.high }" />
+						<c:if test="${weather.tempUnit==true}">
+						<c:out value="${weather.high }" /> &#176;F
+						</c:if>
+						<c:if test="${weather.tempUnit==false}">
+						<c:out value="${(weather.high-32)/1.8 }" /> &#176;C
+						</c:if>
 					</p> <c:if test="${weather.low < 20}">
 						<p>Baby it's cold outside</p>
 					</c:if> <c:if test="${weather.high > 75 }">
@@ -104,17 +125,8 @@
 					</c:if> <c:if test="${(weather.high - weather.low) > 20 }">
 						<p>Wear breathable layers</p>
 					</c:if>
-					<p>
-						<c:out value="${weather.forecast }" />
-					</p> <c:choose>
-						<c:when test="${weather.forecast == 'partly cloudy'}">
-							<c:url value="/img/weather/partlyCloudy.png" var="pc" />
-							<img src="${pc}">
-						</c:when>
-						<c:otherwise>
-							<c:url value="/img/weather/${weather.forecast}.png"
-								var="weatherURL" />
-							<img src="${weatherURL}" />
+				
+					
 							<c:if test="${weather.forecast == 'snow'}">
 								<p>Please pack snow shoes</p>
 							</c:if>
@@ -127,11 +139,10 @@
 							<c:if test="${weather.forecast == 'thunderstorms' }">
 								<p>Seek shelter and avoid hiking on exposed ridges</p>
 							</c:if>
-						</c:otherwise>
-					</c:choose>
-				</li>
-			</ul>
+					
+			
 		</div>
 	</c:forEach>
+	</div>
 </body>
 </html>

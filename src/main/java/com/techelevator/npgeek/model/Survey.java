@@ -12,6 +12,9 @@ public class Survey {
 	private String state;
 	private String activityLevel;
 	private int count;
+	private String name;
+	private String description;
+	
 	
 	public int getSurveyId() {
 		return surveyId;
@@ -48,6 +51,18 @@ public class Survey {
 	}
 	public void setCount(int count) {
 		this.count = count;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

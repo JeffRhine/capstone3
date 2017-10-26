@@ -19,6 +19,7 @@ public class Park {
 	private int numberOfAnimals;
 	private int annualVisitorCount;
 	
+	
 	public String getParkCode() {
 		return parkCode;
 	}
@@ -109,6 +110,7 @@ public class Park {
 	public void setAnnualVisitorCount(int annualVisitorCount) {
 		this.annualVisitorCount = annualVisitorCount;
 	}
+	
 	
 	
 }
