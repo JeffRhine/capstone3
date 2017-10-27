@@ -7,24 +7,27 @@ body {
 
 img {
 	width: 400px;
-	
 }
-.detailImg{
+
+.detailImg {
 	width: 100%;
 	height: 28%;
 }
 
-.parkName{
-	font-size:40px;
+.parkName {
+	font-size: 40px;
 }
-.indent{
-	text-indent:50px;
+
+.indent {
+	text-indent: 50px;
 }
-.weather{
+
+.weather {
 	width: 50%;
 	border: 5px solid black;
 }
-#forecast{
+
+#forecast {
 	display: inline-grid;
 	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
 	padding-right: 25px;
@@ -32,7 +35,52 @@ img {
 
 .navigation {
 	display: inline-grid;
-	grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1.5fr 1fr 1fr;
 	padding-right: 25px;
-	
+}
+
+#surveyResults {
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr 3fr 1fr;
+	padding-right: 25px;
+	padding-top: 10px;
+}
+
+
+
+.name {
+padding-left: 5px;
+}
+
+#nameDescription {
+	display: grid;
+	grid-template-rows: 1fr 2fr; 
+	grid-template-columns: 1fr 2fr;
+	padding-right: 25px;
+	padding-top: 10px;
+}
+.descImage {
+	grid-row: 1/3;
+	grid-column: 1/2;
+}
+
+.flexName {
+	grid-row: 1/2;
+	grid-column: 2/3;	
+}
+
+.parkDescription {
+	grid-row: 2/3;
+	grid-column: 2/3;
+}
+
+nav {
+	disply:inline;
+	background-color: #480f26;	
+}
+
+
+
+.link {
+	background-color: #f5ffff;
 }

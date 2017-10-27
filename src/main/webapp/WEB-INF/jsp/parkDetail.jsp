@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
+ <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="common/header.jspf"%>
 
 <title>National Parks Detail Page</title>
@@ -75,17 +75,28 @@
 					</p>
 
 		</div>
+		<c:url var="tempUnitUrl" value="/tempConvert" ></c:url>
+		<form action="${tempUnitUrl}" method="POST">
+			<input type="hidden" name="parkCode" value="${park.parkCode}"> 
+          <button type="submit" name="tempUnit" id="tempUnit">Change temperature units </button>
+         </form> 
 	</c:forEach>
+		
 
-			<c:url var="changeTemp" value="/parkDetail"></c:url>
-           <button type="radio" name="tempUnit" >Change temperature units </button>
        <div id="forecast">    
 	<c:forEach items="${parkWeather}" var="weather">
 		<div >
 			
 					<p>
 						Day:
+						<c:choose>
+							<c:when test="${weather.fiveDayForecast != 1}" >
 						<c:out value="${weather.fiveDayForecast}" />
+						</c:when>
+						<c:otherwise>
+							<c:out value="${weather.fiveDayForecast}"></c:out>
+						</c:otherwise>
+						</c:choose>
 					</p>
 					<c:choose>
 						<c:when test="${weather.forecast == 'partly cloudy'}">
@@ -103,20 +114,22 @@
 					</p> 
 					<p>
 						Low temp:
-						<c:if test="${weather.tempUnit==true}">
+						<c:if test="${tempUnit==true}">
 						<c:out value="${weather.low }" /> &deg;F
 						</c:if>
-						<c:if test="${weather.tempUnit==false}">
-						<c:out value="${(weather.low-32)/1.8 }"/> &deg;C
+						<c:if test="${tempUnit==false}">
+						<fmt:formatNumber var="lowC" value="${((weather.low-32)/1.8)}" maxFractionDigits="2" />
+						<c:out value="${lowC}"/> &deg;C
 						</c:if>
 					</p>
 					<p>
 						High temp:
-						<c:if test="${weather.tempUnit==true}">
+						<c:if test="${tempUnit==true}">
 						<c:out value="${weather.high }" /> &#176;F
 						</c:if>
-						<c:if test="${weather.tempUnit==false}">
-						<c:out value="${(weather.high-32)/1.8 }" /> &#176;C
+						<c:if test="${tempUnit==false}">
+						<fmt:formatNumber var="highC" value="${(weather.high-32)/1.8 }" maxFractionDigits="2" />
+						<c:out value="${highC}" /> &#176;C
 						</c:if>
 					</p> <c:if test="${weather.low < 20}">
 						<p>Baby it's cold outside</p>

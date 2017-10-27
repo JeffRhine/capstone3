@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
+	<head class="header">
 	<c:url value="/css/capstone.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 	
@@ -11,17 +11,17 @@
         		<img src="${logoURL}" class="images" alt="National Park Geek logo" />
         </a>
         
-        <nav class="navBar">
+        <nav>
          <hr> 
        
        	  <c:url var="home" value="/home"></c:url>
-           <a class="navigation" href="${home}">Home</a>
+           <a class="navigation link" href="${home}">Home</a>
             
             <c:url var="survey" value="/surveyInput"></c:url>
-           <a class="navigation" href="${survey}">Survey</a>
+           <a class="navigation link" href="${survey}">Survey</a>
            
             <c:url var="sResult" value="/surveyResults"></c:url>
-           <a class="navigation" href="${sResult}">Top Parks</a>
+           <a class="navigation link"  href="${sResult}">Top Parks</a>
            
          <hr> 
     </nav>

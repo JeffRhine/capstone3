@@ -10,16 +10,21 @@
 	
 	<body>
 		<c:forEach items= "${allParks}" var="park">
-			<div>
+			<div id="nameDescription">
 				
-						<div> <p><strong><c:out value="${park.parkName}"/></strong></p>
-						 <p><c:out value="${park.state}"/></p>
+					<div class="descImage">	
+						 
 						<c:url value="/img/parks/${park.parkCode}.jpg" var="imgUrl"/>
 						 <a href="parkDetail?parkCode=${park.parkCode}"><img src="${imgUrl}" /></a> 
 						 </div> <br><br>
-						 <div>
-						 <p><c:out value="${park.parkDescription}"/></p>
+						 <div class="flexName">
+						  <p><strong><c:out value="${park.parkName}"/></strong></p>
+						  <p>Located in <c:out value="${park.state}"/></p>
+						  </div>
+						  <div class="parkDescription">
+						 <p class="indent"><c:out value="${park.parkDescription}"/></p>
 						 </div>
+						
 			</div>
 		</c:forEach>	
 	</body>

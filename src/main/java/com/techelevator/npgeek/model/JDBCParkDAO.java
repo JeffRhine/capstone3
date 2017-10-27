@@ -25,7 +25,7 @@ public class JDBCParkDAO implements ParkDAO{
 	@Override
 	public List<Park> getAllParks()  {
 		List<Park> allParks = new ArrayList<>();
-		String sqlSelect = "SELECT * FROM park";
+		String sqlSelect = "SELECT * FROM park ORDER BY parkcode";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelect);
 		while(results.next()) {
 			Park p = new Park();

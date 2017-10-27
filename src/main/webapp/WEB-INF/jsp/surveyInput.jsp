@@ -8,6 +8,7 @@
 
 
 	<div>
+		<div>
 		<label for="favorite park" >Your favorite park</label>
 		 <select name="parkCode" id="park">
 			<option value="CVNP">Cuyahoga
@@ -30,6 +31,8 @@
 			<option value="YNP2">Yosemite National
 				Park</option>
 		</select>
+		</div>
+		<br>
 
 		<div>
 			<label for="Your home state" >Your home state</label>
@@ -87,6 +90,7 @@
 				<option value="WY">Wyoming</option>
 			</select>
 		</div>
+		<br>
 	<div>
 	<label for="activity level" >Your activity level</label>
 		<select name="activityLevel" >
@@ -97,6 +101,7 @@
 		</select>
 
 	</div>
+	<br>
 	<div>
 		<label for="email">Your email address</label> <input type="email"
 				id="email" name="emailAddress">

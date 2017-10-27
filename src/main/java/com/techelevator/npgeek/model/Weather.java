@@ -1,5 +1,7 @@
 package com.techelevator.npgeek.model;
 
+import java.time.LocalDate;
+
 public class Weather {
 
 		private String parkCode;
@@ -8,6 +10,7 @@ public class Weather {
 		private int high;
 		private String forecast;
 		private boolean tempUnit = true;
+		private LocalDate day;
 		
 		
 		public String getParkCode() {
@@ -45,6 +48,12 @@ public class Weather {
 		}
 		public void setTempUnit(boolean tempUnit) {
 			tempUnit = !tempUnit;
+		}
+		public LocalDate getDay() {
+			return day;
+		}
+		public void setDay(LocalDate day) {
+			this.day = day;
 		}
 		
 }
